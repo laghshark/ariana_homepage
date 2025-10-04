@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>아리아나봇 | 카카오톡 오픈채팅 전용 봇 – 소개 & 신청</title>
   <meta name="description" content="카카오톡 오픈채팅 전용 아리아나봇 소개와 무료 신청 링크. 채팅 랭킹, 출석, 노래추천, 수면 기록, 포인트 배팅, 모의 주식 등 다양한 기능을 한 번에!" />
   <meta property="og:title" content="아리아나봇 | 카카오톡 오픈채팅 전용 봇" />
@@ -116,11 +116,33 @@
     .caption{margin-top: .9rem; color: var(--muted); text-align:center}
 
     /* Sticky apply bar */
-    .applybar{position:fixed; left:0; right:0; bottom:18px; display:flex; justify-content:center; z-index:50}
-    .applybar .inner{display:flex; gap:.8rem; align-items:center; padding:.6rem; border-radius:999px}
+    .applybar{position:fixed; left:0; right:0; bottom:calc(18px + env(safe-area-inset-bottom)); display:flex; justify-content:center; z-index:50}
+    .applybar .inner{display:flex; gap:.8rem; align-items:center; padding:.7rem .8rem; border-radius:999px}
 
     footer{margin: 5rem 0 6rem; color:#b7c2ea}
     .tiny{font-size:.86rem; color:#9fb0df}
+    /* ===== Mobile Enhancements ===== */
+    @media (max-width: 640px){
+      body{ padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+      header .navwrap{ padding:.6rem 0; }
+      .hero{ padding: 72px 0 16px; }
+      .hero h1{ font-size: clamp(26px, 7vw, 34px); }
+      .hero p{ font-size: 15px; }
+      .cta{ flex-direction: column; gap:.6rem; }
+      .cta .btn{ width:100%; justify-content:center; }
+
+      .side .art{ aspect-ratio: 1/1; }
+      .pfp{ position:relative; bottom:auto; right:auto; width:min(78vw, 360px); margin: .8rem auto 0; }
+
+      .grid.cols-2{ grid-template-columns: 1fr; }
+      .grid.cols-3{ grid-template-columns: 1fr; }
+
+      details.ac summary{ padding: 1rem; font-size: 1rem; }
+      details.ac .content{ padding: 0 1rem 1rem 1rem; }
+
+      footer .card{ flex-direction: column; align-items: flex-start !important; }
+      footer .card .btn{ width: 100%; justify-content:center; }
+    }
   </style>
 </head>
 <body>
